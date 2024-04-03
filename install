@@ -1,0 +1,6 @@
+#!/bin/sh
+
+gcl https://github.com/seciurte/nvim-config/ ~
+cp -r ~/nvim-config/lua ~/.config/nvim/
+rm -rf ~/nvim-config
+rm -f install
