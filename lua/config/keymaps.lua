@@ -4,22 +4,15 @@
 
 vim.keymap.del("n", "<C-Left>")
 vim.keymap.del("n", "<C-Right>")
--- vim.keymap.del("i", "<C-d>")
 
--- Move left or right word by word in normal mode
-vim.api.nvim_set_keymap("n", "<C-Left>", ":lua move_word_left()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-Right>", ":lua move_word_right()<CR>", { noremap = true, silent = true })
+-- Map Ctrl + Left to switch to the window on the left
+vim.api.nvim_set_keymap("n", "<C-Left>", "<C-W>h", { noremap = true, silent = true })
 
--- Move left or right word by word in insert mode
-vim.api.nvim_set_keymap("i", "<C-Left>", "<Esc>:lua move_word_left()<CR>a", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-Right>", "<Esc>:lua move_word_right()<CR>a", { noremap = true, silent = true })
+-- Map Ctrl + Right to switch to the window on the right
+vim.api.nvim_set_keymap("n", "<C-Right>", "<C-W>l", { noremap = true, silent = true })
 
--- Lua function to move cursor to the previous word
-function move_word_left()
-  vim.cmd([[normal! b]])
-end
+-- Map Ctrl + Up to switch to the window above
+vim.api.nvim_set_keymap("n", "<C-Up>", "<C-W>k", { noremap = true, silent = true })
 
--- Lua function to move cursor to the next word
-function move_word_right()
-  vim.cmd([[normal! w]])
-end
+-- Map Ctrl + Down to switch to the window below
+vim.api.nvim_set_keymap("n", "<C-Down>", "<C-W>j", { noremap = true, silent = true })
